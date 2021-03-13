@@ -1,0 +1,15 @@
+:root{
+/* BASIC */
+	--basic-color:rgb(0,80,255);
+		--basic-color-op:rgba(0,80,255,.7);
+	--second-color:rgb(255,260,0);
+		--second-color-op:rgba(255,260,0,.7);
+	--red-color:rgb(230,0,0);
+		--red-color-op:rgba(230,0,0,.7);
+	--green-color:rgb(20,200,0);
+		--green-color-op:rgba(20,200,0,.7);
+
+
+/* MENU - DASHBOARD */
+	--board-background:rgb(230,230,230);
+}
