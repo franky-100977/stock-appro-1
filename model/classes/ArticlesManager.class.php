@@ -13,8 +13,8 @@ class ArticlesManager extends Manager{
 	public function ArticleExist($id){
 		parent::elementExist($id);
 	}
-	public function nameExist($nom){
-		$select = $this->_bd->query("SELECT * FROM ".$this->table." WHERE nom = '".$nom."'");
+	public function designationExist($designation){
+		$select = $this->bd->query("SELECT * FROM ".$this->table." WHERE designation = '".$designation."'");
 		return ($select->rowCount() > 0);
 	}
 	public function getArticle($id){

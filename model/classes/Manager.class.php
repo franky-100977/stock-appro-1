@@ -51,30 +51,33 @@ class Manager{
 					$propertiesNames .= ", ";
 				}
 			}
+			$i++;
 		}
 
-		$insertion = $this->_bd->prepare("INSERT INTO ".$this->table."(".$propertiesNames.") VALUES(?,?,?,?,?)");
+		$insertion = $this->bd->prepare("INSERT INTO ".$this->table."(".$propertiesNames.") VALUES(?,?,?,?,?)");
 		return $insertion->execute($propertiesValues);
 	}
 	public function update($this->class $element){
 		$reflectClass = new ReflectionClass($element);
 		$changements = "";
-		$attrs = self::getAttributsProduits();
-		for($i=0;$i<count($attrs);$i++){
-			if($attrs[$i] !="id" AND $attrs[$i] !="stock"){
-				$method = 'get'.ucfirst($attrs[$i]);
-				if($produit->$method() != ""){
-					$changements .= $attrs[$i]." = '".$produit->$method()."'";
-					$changements .= ",";
+		foreach($reflectClass->getProperties() as $property){
+			$property->setAccessible(true);
+			if($property->getName() != "id"){
+				if(is_int($property->getValue())){
+					$changements .= $property->getName()." = ".$property->getValue();
+				}else{
+					$changements .= $property->getName()." = '".$property->getValue()."'";
 				}
-			}elseif($attrs[$i] == "stock"){
-				$changements .= "stock = '".$produit->getStock()."'";
+				if ($i < len($reflectClass->getProperties())){
+					$changements .= ", ";
+				}
 			}
+			$i++;
 		}
-		return $this->_bd->query("UPDATE ".$this->table." SET ".$changements." WHERE id = ".$element->getId());
+		return $this->bd->query("UPDATE ".$this->table." SET ".$changements." WHERE id = ".$element->getId());
 	}
 	public function delete($id){
-		return $this->_bd->query("DELETE FROM ventes WHERE id = ".$id);
+		return $this->bd->query("DELETE FROM ventes WHERE id = ".$id);
 	}
 }
 

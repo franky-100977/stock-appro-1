@@ -1,5 +1,5 @@
 <?php
-class Facture{
+class Bill{
 	protected 
 		$id = 0, $client = "", $ids_produits = "", $mode_produits = "", $qte_produits = "";
 	protected
