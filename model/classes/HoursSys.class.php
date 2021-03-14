@@ -1,4 +1,6 @@
 <?php
+/* One class to manage hour in application */
+
 class HoursSys{
 	protected $hours, $minutes, $seconds;
 
