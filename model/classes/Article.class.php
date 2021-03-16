@@ -1,7 +1,8 @@
 <?php
 class Article{
 	protected 
-		$id = 0, $nom = "", $prix_detail = 0, $prix_gros = 0, $stock = 0;
+		$id = 0, $id_section = 0, $designation = "", $unit_price = 0, $stock = 0,
+		$minimum_stock = 3, $maximun_stock = 30;
 	public function __construct(array $datas){
 		$this->hydrate($datas);
 	}
@@ -17,10 +18,12 @@ class Article{
 	}
 	// Getters
 	public function getId(){ return $this->id;}
-	public function getNom(){ return $this->nom;}
-	public function getPrix_detail(){ return $this->prix_detail;}
-	public function getPrix_gros(){ return $this->prix_gros;}
+	public function getId_section(){ return $this->id_section;}
+	public function getDesignation(){ return $this->designation;}
+	public function getUnit_price(){ return $this->unit_price;}
 	public function getStock(){ return $this->stock;}
+	public function getMinimunStock(){ return $this->minimum_stock;}
+	public function getMaximunStock(){ return $this->maximum_stock;}
 	/**
 		SETTERS
 	*/
@@ -31,18 +34,25 @@ class Article{
 			trigger_error("L'id doit etre un entier strictement positif", E_USER_WARNING);
 		}
 	}
-	public function setNom($nom){
-		if(is_string($nom)){
-			$this->nom = $nom;
+	public function setId_section($id){
+		if(is_int($id)){
+			$this->id_section = (int) $id;
 		}else{
-			trigger_error("setNom : L'élément passé en parametre n'est de type string", E_USER_WARNING);
+			trigger_error("L'id doit etre un entier strictement positif", E_USER_WARNING);
 		}
 	}
-	public function setPrix_detail($prix_detail){
-		if((int)$prix_detail >=0){
-			$this->prix_detail = (int) $prix_detail;
+	public function setDesignation($designation){
+		if(is_string($designation)){
+			$this->designation = $designation;
 		}else{
-			trigger_error("setPrix_detail : L'élément passé en parametre n'est de type int", E_USER_WARNING);
+			trigger_error("setDesignation : L'élément passé en parametre n'est de type string", E_USER_WARNING);
+		}
+	}
+	public function setunit_price($unit_price){
+		if((int)$unit_price >=0){
+			$this->unit_price = (int) $unit_price;
+		}else{
+			trigger_error("setunit_price : L'élément passé en parametre n'est de type int", E_USER_WARNING);
 		}
 	}
 	public function setPrix_gros($prix_gros){
