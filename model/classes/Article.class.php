@@ -59,7 +59,7 @@ class Article{
 		if((int)$stock >=0){
 			$this->stock = $stock;
 		}else{
-			trigger_error("setPrix_gros : L'élément passé en parametre n'est de type int", E_USER_WARNING);
+			trigger_error("setPrix_gros : L'élément passé en parametre n'est de type int", E_USER_WARNING); 
 		}
 	}
 }
