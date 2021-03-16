@@ -1,0 +1,155 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.stocks{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white; 
+}
+.vertical-position{
+    position: absolute;
+    width: 30%;
+    height: 92%;
+    background-color:rgb(230, 230, 230);
+}
+.deconnexion{
+  border-bottom: 8px solid rgb(255, 160, 0);  
+}
+.stock{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 80, 225);
+    left: 45px;
+    margin: 5px;
+    display: inline-block;
+}
+.heading-stock{
+    position: relative;
+    text-transform: capitalize;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    top: 70%;
+}
+.rupture{
+    position: absolute;
+    left: 37%;
+    margin-top: 10px;
+    margin: auto;
+    padding: 0;
+   
+    
+}
+.rupture1{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(20, 200, 0);
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+.rupture2{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(230, 0, 0);
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+.rupture3{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(0, 80, 255);
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+.chiffre,.text,.text1{
+    color: white;
+    margin: 0;
+    font-family: sans-serif;
+}
+.chiffre{
+  padding:6px 0px 0px 6px; 
+  font-size: 2em;
+  font-weight: bold;
+}
+.text{
+    margin: 0;
+    padding: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.text1{
+    margin: 0;
+    border-top: 1px solid white;
+    text-align: center;    
+}
+.stat{
+    width: 65%;
+    height: 60px;
+    position: absolute;
+    left: 33%;
+    margin-top: 180px;
+    background-color: rgb(230, 230, 230);
+}
+.last-content{
+    position: absolute;
+    left: 33%;
+    margin: 0;
+    padding: 0;
+    
+}
+.case{
+    width: 48%;
+    height: 300px;
+    margin-top: 250px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    
+
+    
+}
+.last{
+    background-color: rgb(0, 80, 255);
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+    
+}
+.end{
+    width: 65%;
+    height: 60px;
+    position: absolute;
+    left: 33%;
+    margin-top: 550px;
+    background-color: rgb(0, 80, 255);
+    margin-top: 570px;
+    
+}
+.end-text{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+
+}
+.last-text{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: justify;
+}
+.stat p{
+    color: gray;
+    margin-left: 10px;
+    font-size: 20px;
+    
+}
