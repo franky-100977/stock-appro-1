@@ -48,18 +48,11 @@ class Article{
 			trigger_error("setDesignation : L'élément passé en parametre n'est de type string", E_USER_WARNING);
 		}
 	}
-	public function setunit_price($unit_price){
+	public function setUnit_price($unit_price){
 		if((int)$unit_price >=0){
 			$this->unit_price = (int) $unit_price;
 		}else{
 			trigger_error("setunit_price : L'élément passé en parametre n'est de type int", E_USER_WARNING);
-		}
-	}
-	public function setPrix_gros($prix_gros){
-		if((int)$prix_gros >=0){
-			$this->prix_gros = $prix_gros;
-		}else{
-			trigger_error("setPrix_gros : L'élément passé en parametre n'est de type int", E_USER_WARNING);
 		}
 	}
 	public function setStock($stock){
